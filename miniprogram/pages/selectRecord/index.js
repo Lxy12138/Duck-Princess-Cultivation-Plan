@@ -37,7 +37,7 @@ Page({
 
   getRecord() {
     wx.showLoading({
-      title: '记录加载中',
+      title: '加载中',
     });
    wx.cloud.callFunction({
       name: 'quickstartFunctions',
@@ -101,7 +101,6 @@ Page({
             }
           }).then(resp => {
             const goodsData = resp.result.data[0];
-            console.log(goodsData.goods_integral);
             if(!goodsData){
               wx.hideLoading();
               return
